@@ -1,5 +1,20 @@
 
-.main
+header
+{
+    text-align: center;
+}
+
+footer
+{
+    text-align: center;
+}
+footer ul
+{
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.page-content
 {
     margin: auto;
     width: 65%;
@@ -50,12 +65,24 @@ h1
             background-color: #111;
             
         }
-        .active 
-        {
-            background-color: #04AA6D;
-        }
     }
 } 
+
+.icons
+{
+    border: 1px solid green;
+    list-style-type: none;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    padding-left: 0;
+}
+.icons li img
+{
+    border: 1px solid red;
+    width: 25px;
+    height: 25px;
+}
 
 .grid-container
 {
