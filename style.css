@@ -5,50 +5,6 @@
     width: 65%;
 }
 
-.dcenter
-{
-    text-align: center;
-    border: 1px solid green;
-}
-
-.dnav
-{
-    border: 1px solid red;
-
-    ul
-    {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: #333;
-
-        li
-        {
-            display: inline-block;
-            border-bottom: 1px solid #bbb;
-    
-            a
-            {
-                display: block;
-                color: white;
-                text-align: center;
-                padding: 14px 16px;
-                text-decoration: none;
-            }
-            a:hover:not(.active) 
-            {
-                background-color: #111;
-                
-            }
-            .active 
-            {
-                background-color: #04AA6D;
-            }
-        }
-    }
-}
-
 h1
 {
     font-family: "Source Sans Pro", Helvetica, sans-serif;
@@ -59,11 +15,70 @@ h1
 	margin: 0 0 1rem 0;
 }
 
-.container
+.dcenter
 {
-    border: 3px solid rgb(30, 228, 12);
+    text-align: center;
+    border: 1px solid green;
+}
+
+.dnav
+{
+    border: 1px solid red;
+}
+
+.dnav ul
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    li
+    {
+        display: inline-block;
+        border-bottom: 1px solid #bbb;
+        a
+        {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        a:hover:not(.active) 
+        {
+            background-color: #111;
+            
+        }
+        .active 
+        {
+            background-color: #04AA6D;
+        }
+    }
+} 
+
+.grid-container
+{
+    border: 1px solid green;
     display: grid;
-    grid-template-columns: repeat(4, auto);
-    grid-gap: 1em;
-    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    align-items: center;
+    align-content: center;
+    gap: 1em;
+}
+.grid-item
+{
+    border: 1px solid red;
+    display: grid;
+    height: 250px;
+    columns: 1;
+    grid-template-rows: 225px 25px;
+    text-align: center;
+}
+.grid-item img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 3px;
 }
