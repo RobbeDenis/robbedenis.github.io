@@ -1,4 +1,9 @@
 
+body
+{
+    margin: 0;
+}
+
 header
 {
     text-align: center;
@@ -16,32 +21,43 @@ footer ul
 
 .page-content
 {
+    border: 1px solid green;
     margin: auto;
     width: 65%;
+}
+
+.scroll-arrow 
+{
+    position: fixed;
+    left: 90%;
+    bottom: 26px;
+    width: 36px;
+    height: 36px;
+    align-content: center;
+}
+.scroll-arrow img
+{
+    border: 1px solid red;
+    width: 30px;
+    height: 30px;
 }
 
 h1
 {
     font-family: "Source Sans Pro", Helvetica, sans-serif;
-	font-weight: 900;
-	line-height: 1.5;
-	letter-spacing: 0.075em;
-	text-transform: uppercase;
-	margin: 0 0 1rem 0;
+    font-weight: 900;
+    line-height: 1.5;
+    letter-spacing: 0.075em;
+    text-transform: uppercase;
+    margin: 0 0 1rem 0;
 }
 
-.dcenter
-{
-    text-align: center;
-    border: 1px solid green;
-}
-
-.dnav
+.navbar
 {
     border: 1px solid red;
 }
 
-.dnav ul
+.navbar ul
 {
     list-style-type: none;
     margin: 0;
