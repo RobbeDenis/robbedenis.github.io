@@ -2,16 +2,19 @@
 body
 {
     margin: 0;
+    background-color: #bbb;
 }
 
 header
 {
     text-align: center;
+    background-color: #333;
 }
 
 footer
 {
     text-align: center;
+    background-color: #333;
 }
 footer ul
 {
@@ -124,4 +127,10 @@ h1
     height: 100%;
     object-fit: cover;
     border-radius: 3px;
+}
+
+.about-grid
+{
+    display: flex;
+    
 }
