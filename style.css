@@ -2,24 +2,45 @@
 body
 {
     margin: 0;
-    background-color: #bbb;
+    color:#bbb;
+    background-color:#111;
 }
 
 header
 {
     text-align: center;
-    background-color: #333;
+    background-color: black;
 }
 
 footer
 {
     text-align: center;
-    background-color: #333;
+    background-color: black;
+    padding-bottom: 60px;
+}
+footer .space
+{
+    padding-top: 17px;
 }
 footer ul
 {
     list-style-type: none;
     padding-left: 0;
+}
+footer .ref-links
+{
+    a:link 
+    {
+        color: #bbb;
+        background-color: transparent;
+        text-decoration: none;
+    }
+    a:hover 
+    {
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+    }
 }
 
 .page-content
@@ -41,7 +62,6 @@ footer ul
 }
 .scroll-arrow img
 {
-    border: 1px solid red;
     width: 30px;
     height: 30px;
 }
@@ -56,18 +76,13 @@ h1
     margin: 0 0 1rem 0;
 }
 
-.navbar
-{
-    border: 1px solid red;
-}
-
 .navbar ul
 {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: black;
     li
     {
         display: inline-block;
@@ -75,7 +90,7 @@ h1
         a
         {
             display: block;
-            color: white;
+            color: #bbb;
             text-align: center;
             padding: 14px 16px;
             text-decoration: none;
@@ -90,7 +105,6 @@ h1
 
 .icons
 {
-    border: 1px solid green;
     list-style-type: none;
     display: flex;
     gap: 5px;
@@ -99,7 +113,6 @@ h1
 }
 .icons li img
 {
-    border: 1px solid red;
     width: 25px;
     height: 25px;
 }
@@ -114,7 +127,17 @@ h1
 }
 .grid-item
 {
-    border: 1px solid black;
+    border: 2px solid black;
+    border-radius: 3px;
+    display: grid;
+    height: 250px;
+    columns: 1;
+    grid-template-rows: 225px 25px;
+    text-align: center;
+}
+.grid-item:hover
+{
+    border: 2px solid #bbb;
     border-radius: 3px;
     display: grid;
     height: 250px;
@@ -125,7 +148,7 @@ h1
 .grid-item .title
 {
     color:#bbb;
-    background-color: #111;
+    background-color:  black;
 }
 .grid-item img
 {
@@ -138,5 +161,5 @@ h1
 .tags
 {
     color: #bbb;
-    background-color:#111;
+    background-color:black;
 }
