@@ -37,9 +37,15 @@ footer .ref-links
     }
     a:hover 
     {
-    color: red;
-    background-color: transparent;
-    text-decoration: underline;
+        color: white;
+        background-color: transparent;
+        text-decoration: underline;
+    }
+    a:visited
+    {
+        color: #bbb;
+        background-color: transparent;
+        text-decoration: none;
     }
 }
 
@@ -51,19 +57,45 @@ footer .ref-links
     margin-top: 2%;
 }
 
-.scroll-arrow 
-{
+.scroll-arrow {
     position: fixed;
-    left: 90%;
-    bottom: 26px;
-    width: 36px;
-    height: 36px;
-    align-content: center;
+    left: 95%;
+    bottom: 40px;
+	background-color:  #bbb;
+	text-align: left;
+    align-self: center;
 }
-.scroll-arrow img
-{
-    width: 30px;
-    height: 30px;
+.scroll-arrow:hover {
+    position: fixed;
+    left: 95%;
+    bottom: 40px;
+	background-color:  white;
+	text-align: left;
+    align-self: center;
+}
+.scroll-arrow:before,
+.scroll-arrow:after {
+	content: '';
+	position: absolute;
+	background-color: inherit;
+}
+
+.scroll-arrow,
+.scroll-arrow:before,
+.scroll-arrow:after {
+	width:  1.5em;
+	height: 1.5em;
+	border-top-right-radius: 30%;
+}
+
+.scroll-arrow {
+	transform: rotate(-60deg) skewX(-30deg) scale(1,.866);
+}
+.scroll-arrow:before {
+	transform: rotate(-135deg) skewX(-45deg) scale(1.414,.707) translate(0,-50%);
+}
+.scroll-arrow:after {
+	transform: rotate(135deg) skewY(-45deg) scale(.707,1.414) translate(50%);
 }
 
 h1
@@ -74,8 +106,12 @@ h1
     letter-spacing: 0.075em;
     text-transform: uppercase;
     margin: 0 0 1rem 0;
+    color: rgb(196, 196, 196);
 }
-
+h2
+{
+    color: rgb(196, 196, 196);
+}
 .navbar ul
 {
     list-style-type: none;
