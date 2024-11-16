@@ -35,17 +35,17 @@ footer .ref-links
         background-color: transparent;
         text-decoration: none;
     }
-    a:hover 
-    {
-        color: white;
-        background-color: transparent;
-        text-decoration: underline;
-    }
     a:visited
     {
         color: #bbb;
         background-color: transparent;
         text-decoration: none;
+    }
+    a:hover 
+    {
+        color: white;
+        background-color: transparent;
+        text-decoration: underline;
     }
 }
 
@@ -164,7 +164,7 @@ h2
 .grid-item
 {
     border: 2px solid black;
-    border-radius: 3px;
+    border-radius: 4px;
     display: grid;
     height: 250px;
     columns: 1;
@@ -173,8 +173,8 @@ h2
 }
 .grid-item:hover
 {
-    border: 2px solid #bbb;
-    border-radius: 3px;
+    border: 2px solid white;
+    border-radius: 4px;
     display: grid;
     height: 250px;
     columns: 1;
