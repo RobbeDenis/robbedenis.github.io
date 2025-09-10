@@ -139,6 +139,16 @@ h2
     }
 } 
 
+.subtitle
+{
+    a:link,
+    a:visited,
+    a:hover 
+    {
+        text-decoration: none;
+    }
+}
+
 .icons
 {
     list-style-type: none;

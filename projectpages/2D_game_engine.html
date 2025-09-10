@@ -34,21 +34,36 @@
                     This is a self made/designed component based 2D game engine.
                     (command input system, controller support, imgui support, text rendering, sprite animations, collisions and audio)
                 </div> 
-                <h3 class="subtitle">Components</h3>
+                <h3 class="subtitle">Gameobjects<a href="https://github.com/RobbeDenis/2D-game-engine/blob/main/Minigin/GameObject.h" target="_blank">&#x1F517</a></h3>
                 <div>
-                    GameObjects and components
+                    The Game objects only exist to group components together and handle their lifetime/ function calls.
+                    This engine focusses on composition, so all functionality can only be added through components. This is enforeced by making GameObject final.
                 </div>
-                <h3 class="subtitle">Audio</h3>
+                <h3 class="subtitle">Components<a href="https://github.com/RobbeDenis/2D-game-engine/blob/main/Minigin/Component.h" target="_blank">&#x1F517</a></h3>
                 <div>
-                    Service locator, SDL_Mixer
+                    Components are the place where
                 </div>
-                <h3 class="subtitle">Input Commands</h3>
+                <h3 class="subtitle">Scene Graph</h3>
                 <div>
-                    Command pattern
+                    
                 </div>
-                <h3 class="subtitle">Controller Support</h3>
+                <h3 class="subtitle">Audio<a href="https://github.com/RobbeDenis/2D-game-engine/blob/main/Minigin/SDLSoundSystem.cpp" target="_blank">&#x1F517</a></h3>
                 <div>
-                    pImpl
+                    By default the engine uses SDL_mixer for audio, but offers the possibility to implement and swap other libraries. 
+                    This is done by using the service locator pattern, with this you can easily create your own SoundSystem and register it to the SoundSystemLocator.
+                    (here go a little indepth to explain what my current SDLSoundSystem does)
+                </div>
+                <h3 class="subtitle">Input<a href="https://github.com/RobbeDenis/2D-game-engine/blob/main/Minigin/InputManager.h" target="_blank">&#x1F517</a></h3>
+                <div>
+                    The input manager uses the command pattern to bind input events to actions. 
+                    The engine supports both keyboard and multiple controllers controllers at the same time. By default only xbox controllers are supported, 
+                    but by inherriting from the Controller class and using its interface you can technically use any input device you want.
+                </div>
+                <h3 class="subtitle">ImGui<a href="https://github.com/RobbeDenis/2D-game-engine/blob/main/Minigin/ImGuiRenderer.cpp" target="_blank">&#x1F517</a></h3>
+                <div>
+                    The engine allows the use of ImGui through a ImGui render component. 
+                    The only thing you need to do is use AddWindowFunction to pass a std::function<void()> that holds the ImGui window code. 
+                    After that the engine will take care of the ImGui input and rendering.
                 </div>
             </div>
         </div>
