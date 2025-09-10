@@ -36,12 +36,16 @@
                 </div> 
                 <h3 class="subtitle">Gameobjects<a href="https://github.com/RobbeDenis/2D-game-engine/blob/main/Minigin/GameObject.h" target="_blank">&#x1F517</a></h3>
                 <div>
-                    The Game objects only exist to group components together and handle their lifetime/ function calls.
-                    This engine focusses on composition, so all functionality can only be added through components. This is enforeced by making GameObject final.
+                    The gameobjects exist to group components together and handle their lifetime/engine loop calls, and give them information about the position, 
+                    scene and other attached components/gameobjects.
+                    Gameobjects are final classes, this is so that functionality is only implemented through components.
                 </div>
                 <h3 class="subtitle">Components<a href="https://github.com/RobbeDenis/2D-game-engine/blob/main/Minigin/Component.h" target="_blank">&#x1F517</a></h3>
                 <div>
-                    Components are the place where
+                    Components can be used for anything, the only requirement is that they are attached to a gameobject. 
+                    A gameobject provides 2 templated functions to manage components <code>AddComponent()</code> and <code>GetComponent()</code>.
+                    The GameObject validates the component type at compile time using the IsComponent concept and, in most IDEs, the constraints are visible through IntelliSense, 
+                    making it very user-friendly.
                 </div>
                 <h3 class="subtitle">Scene Graph</h3>
                 <div>
