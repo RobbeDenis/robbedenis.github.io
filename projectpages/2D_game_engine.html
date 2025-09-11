@@ -36,7 +36,7 @@
                 </div> 
                 <h3 class="subtitle">Gameobjects<a href="https://github.com/RobbeDenis/2D-game-engine/blob/main/Minigin/GameObject.h" target="_blank">&#x1F517</a></h3>
                 <div>
-                    The gameobjects exist to group components together and handle their lifetime/engine loop calls, and give them information about the position, 
+                    The gameobjects exist to group components together, handle their lifetime, engine loop calls and give them information about the position, 
                     scene and other attached components/gameobjects.
                     Gameobjects are final classes, this is so that functionality is only implemented through components.
                 </div>
@@ -44,12 +44,15 @@
                 <div>
                     Components can be used for anything, the only requirement is that they are attached to a gameobject. 
                     A gameobject provides 2 templated functions to manage components <code>AddComponent()</code> and <code>GetComponent()</code>.
-                    The GameObject validates the component type at compile time using the IsComponent concept and, in most IDEs, the constraints are visible through IntelliSense, 
+                    The GameObject validates the component type at compile time using the <code>IsComponent</code> concept and, in most IDEs, the constraints are visible through IntelliSense, 
                     making it very user-friendly.
                 </div>
-                <h3 class="subtitle">Scene Graph</h3>
+                <h3 class="subtitle">Transform</h3>
                 <div>
-                    
+                    Every gameobject has a world and local position.
+                    Local position is the relative position to the parent gameobject, world position is the absolute position in the scene.
+                    These can only be accessed through public member functions. This is done to prevent unnecessary calculations, by setting a dirty flag whenever the positions change.
+                    When getting the world position, the engine can now know if the position needs to be recalculated depending on the flag.
                 </div>
                 <h3 class="subtitle">Audio<a href="https://github.com/RobbeDenis/2D-game-engine/blob/main/Minigin/SDLSoundSystem.cpp" target="_blank">&#x1F517</a></h3>
                 <div>
@@ -62,6 +65,10 @@
                     The input manager uses the command pattern to bind input events to actions. 
                     The engine supports both keyboard and multiple controllers controllers at the same time. By default only xbox controllers are supported, 
                     but by inherriting from the Controller class and using its interface you can technically use any input device you want.
+                </div>
+                <h3 class="subtitle">Rendering<a href="https://github.com/RobbeDenis/2D-game-engine/blob/main/Minigin/Renderer.cpp" target="_blank">&#x1F517</a></h3>
+                <div>
+                    
                 </div>
                 <h3 class="subtitle">ImGui<a href="https://github.com/RobbeDenis/2D-game-engine/blob/main/Minigin/ImGuiRenderer.cpp" target="_blank">&#x1F517</a></h3>
                 <div>
