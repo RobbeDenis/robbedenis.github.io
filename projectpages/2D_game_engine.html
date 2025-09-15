@@ -29,76 +29,105 @@
         </div>
         <div class="page-content">
             <div class="paragraph">
+                <a href="https://github.com/RobbeDenis/2D-game-engine" target="_blank" class="btn-outline">
+                    View on GitHub
+                </a>
                 <h3 class="subtitle">Description</h3>
                 <div>
                     This is a self made/designed component based 2D game engine.
                     (command input system, controller support, imgui support, text rendering, sprite animations, collisions and audio)
                 </div> 
 
-                <h3 class="subtitle">
-                    Gameobjects
-                    <a href="https://github.com/RobbeDenis/2D-game-engine/blob/main/Minigin/GameObject.h" class="code-link" target="_blank">.h</a>
-                    <a href="https://github.com/RobbeDenis/2D-game-engine/blob/main/Minigin/GameObject.cpp" class="code-link" target="_blank">.cpp</a>
-                </h3>
-                <div>
-                    The gameobjects exist to group components together, handle their lifetime, engine loop calls and give them information about the position, 
-                    scene and other attached components/gameobjects.
-                    Gameobjects are final classes, this is so that functionality is only implemented through components.
+                <div class="card">
+                    <h3 class="subtitle">
+                        Gameobjects
+                        <a href="https://github.com/RobbeDenis/2D-game-engine/blob/main/Minigin/GameObject.h" class="code-link" target="_blank">.h</a>
+                        <a href="https://github.com/RobbeDenis/2D-game-engine/blob/main/Minigin/GameObject.cpp" class="code-link" target="_blank">.cpp</a>
+                    </h3>
+                    <div>
+                        The gameobjects exist to group components together, handle their lifetime, engine loop calls and give them information about the position, 
+                        scene and other attached components/gameobjects.
+                        Gameobjects are final classes, this is so that functionality is only implemented through components.
+                    </div>
                 </div>
 
-                <h3 class="subtitle">
-                    Components
-                    <a href="https://github.com/RobbeDenis/2D-game-engine/blob/main/Minigin/Component.h" class="code-link" target="_blank">.h</a>
-                    <a href="https://github.com/RobbeDenis/2D-game-engine/blob/main/Minigin/Component.cpp" class="code-link" target="_blank">.cpp</a>
-                </h3>
-                <div>
-                    Components can be used for anything, the only requirement is that they are attached to a gameobject. 
-                    A gameobject provides 2 templated functions to manage components <code>AddComponent()</code> and <code>GetComponent()</code>.
-                    The GameObject validates the component type at compile time using the <code>IsComponent</code> concept and, in most IDEs, the constraints are visible through IntelliSense, 
-                    making it very user-friendly.
+                <div class="card">
+                    <h3 class="subtitle">
+                        Components
+                        <a href="https://github.com/RobbeDenis/2D-game-engine/blob/main/Minigin/Component.h" class="code-link" target="_blank">.h</a>
+                        <a href="https://github.com/RobbeDenis/2D-game-engine/blob/main/Minigin/Component.cpp" class="code-link" target="_blank">.cpp</a>
+                    </h3>
+                    <div>
+                        Components can be used for anything, the only requirement is that they are attached to a gameobject. 
+                        A gameobject provides 2 templated functions to manage components <code>AddComponent()</code> and <code>GetComponent()</code>.
+                        The GameObject validates the component type at compile time using the <code>IsComponent</code> concept and, in most IDEs, the constraints are visible through IntelliSense, 
+                        making it very user-friendly.
+                    </div>
                 </div>
 
-                <h3 class="subtitle">
-                    Transform
-                    <a href="https://github.com/RobbeDenis/2D-game-engine/blob/a266c24a03049a5470b0a395b75396d21d379e7c/Minigin/GameObject.h#L34" class="code-link" target="_blank">.h</a>
-                    <a href="https://github.com/RobbeDenis/2D-game-engine/blob/a266c24a03049a5470b0a395b75396d21d379e7c/Minigin/GameObject.cpp#L212" class="code-link" target="_blank">.cpp</a>
-                </h3>
-                <div>
-                    Every gameobject has a world and local position.
-                    Local position is the relative position to the parent gameobject, world position is the absolute position in the scene.
-                    These can only be accessed through public member functions. This is done to prevent unnecessary calculations, by setting a dirty flag whenever the positions change.
-                    When getting the world position, the engine can now know if the position needs to be recalculated depending on the flag.
+                <div class="card">
+                    <h3 class="subtitle">
+                        Transform
+                        <a href="https://github.com/RobbeDenis/2D-game-engine/blob/a266c24a03049a5470b0a395b75396d21d379e7c/Minigin/GameObject.h#L34" class="code-link" target="_blank">.h</a>
+                        <a href="https://github.com/RobbeDenis/2D-game-engine/blob/a266c24a03049a5470b0a395b75396d21d379e7c/Minigin/GameObject.cpp#L212" class="code-link" target="_blank">.cpp</a>
+                    </h3>
+                    <div>
+                        Every gameobject has a world and local position.
+                        Local position is the relative position to the parent gameobject, world position is the absolute position in the scene.
+                        These can only be accessed through public member functions. This is done to prevent unnecessary calculations, by setting a dirty flag whenever the positions change.
+                        When getting the world position, the engine can now know if the position needs to be recalculated depending on the flag.
+                    </div>
                 </div>
 
-                <h3 class="subtitle">
-                    Audio
-                    <a href="https://github.com/RobbeDenis/2D-game-engine/blob/main/Minigin/SDLSoundSystem.h" class="code-link" target="_blank">.h</a>
-                    <a href="https://github.com/RobbeDenis/2D-game-engine/blob/main/Minigin/SDLSoundSystem.cpp" class="code-link" target="_blank">.cpp</a>
-                </h3>
-                <div>
-                    By default the engine uses SDL_mixer for audio, but offers the possibility to implement and swap other libraries. 
-                    This is done by using the service locator pattern, with this you can easily create your own SoundSystem and register it to the SoundSystemLocator.
-                    (here go a little indepth to explain what my current SDLSoundSystem does)
+                <div class="card">
+                    <h3 class="subtitle">
+                        Audio
+                        <a href="https://github.com/RobbeDenis/2D-game-engine/blob/main/Minigin/SDLSoundSystem.h" class="code-link" target="_blank">.h</a>
+                        <a href="https://github.com/RobbeDenis/2D-game-engine/blob/main/Minigin/SDLSoundSystem.cpp" class="code-link" target="_blank">.cpp</a>
+                    </h3>
+                    <div>
+                        By default the engine uses SDL_mixer for audio, but offers the possibility to implement and swap other libraries. 
+                        This is done by using the service locator pattern, with this you can easily create your own SoundSystem and register it to the SoundSystemLocator.
+                        (here go a little indepth to explain what my current SDLSoundSystem does)
+                    </div>
                 </div>
 
-                <h3 class="subtitle">Input<a href="https://github.com/RobbeDenis/2D-game-engine/blob/main/Minigin/InputManager.h" target="_blank">&#x1F517</a></h3>
-                <div>
-                    The input manager uses the command pattern to bind input events to actions. 
-                    The engine supports both keyboard and multiple controllers controllers at the same time. By default only xbox controllers are supported, 
-                    but by inherriting from the Controller class and using its interface you can technically use any input device you want.
+                <div class="card">
+                    <h3 class="subtitle">
+                        Input
+                        <a href="https://github.com/RobbeDenis/2D-game-engine/blob/main/Minigin/InputManager.h" class="code-link" target="_blank">.h</a>
+                        <a href="https://github.com/RobbeDenis/2D-game-engine/blob/main/Minigin/InputManager.cpp" class="code-link" target="_blank">.cpp</a>
+                    </h3>
+                    <div>
+                        The input manager uses the command pattern to bind input events to actions. 
+                        The engine supports both keyboard and multiple controllers controllers at the same time. By default only xbox controllers are supported, 
+                        but by inherriting from the Controller class and using its interface you can technically use any input device you want.
+                    </div>
                 </div>
 
-                <h3 class="subtitle">Rendering<a href="https://github.com/RobbeDenis/2D-game-engine/blob/main/Minigin/Renderer.cpp" target="_blank">&#x1F517</a></h3>
-                <div>
-                    The renderer is a singleton that provides a simple interface for rendering textures, masked textures and lines.
-                    These functions are used in RenderComponent and its derived components TextRenderer and SpriteRenderer.
+                <div class="card">
+                    <h3 class="subtitle">
+                        Rendering
+                        <a href="https://github.com/RobbeDenis/2D-game-engine/blob/main/Minigin/Renderer.h" class="code-link" target="_blank">.h</a>
+                        <a href="https://github.com/RobbeDenis/2D-game-engine/blob/main/Minigin/Renderer.cpp" class="code-link" target="_blank">.cpp</a>
+                    </h3>
+                    <div>
+                        The renderer is a singleton that provides a simple interface for rendering textures, masked textures and lines.
+                        These functions are used in RenderComponent and its derived components TextRenderer and SpriteRenderer.
+                    </div>
                 </div>
 
-                <h3 class="subtitle">ImGui<a href="https://github.com/RobbeDenis/2D-game-engine/blob/main/Minigin/ImGuiRenderer.cpp" target="_blank">&#x1F517</a></h3>
-                <div>
-                    The engine allows the use of ImGui through a ImGui render component. 
-                    The only thing you need to do is use AddWindowFunction to pass a std::function<void()> that holds the ImGui window code. 
-                    After that the engine will take care of the ImGui input and rendering.
+                <div class="card">
+                    <h3 class="subtitle">
+                        ImGui
+                        <a href="https://github.com/RobbeDenis/2D-game-engine/blob/main/Minigin/ImGuiRenderer.h" class="code-link" target="_blank">.h</a>
+                        <a href="https://github.com/RobbeDenis/2D-game-engine/blob/main/Minigin/ImGuiRenderer.cpp" class="code-link" target="_blank">.cpp</a>
+                    </h3>
+                    <div>
+                        The engine allows the use of ImGui through a ImGui render component. 
+                        The only thing you need to do is use AddWindowFunction to pass a std::function<void()> that holds the ImGui window code. 
+                        After that the engine will take care of the ImGui input and rendering.
+                    </div>
                 </div>
             </div>
         </div>
