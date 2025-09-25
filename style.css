@@ -180,6 +180,14 @@ h2 {
   font-family: Arial, sans-serif;
 }
 
+.video-card {
+  border: 2px solid #262c31;
+  background-color: #111;
+  border-radius: 10px;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
 .link-row 
 {
   display: flex;
