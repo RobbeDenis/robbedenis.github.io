@@ -12,7 +12,6 @@
         <div class="dcenter">
             <header class="header">
                 <h1 href="#" class="name"> Robbe Denis </h1>
-                <h2 class="jtitle"> Audio Programmer </h2>
                 <ul class="icons">
                     <li><a href="https://github.com/RobbeDenis" target="_blank"> <img src="../icons/github.png"></a></li>
                     <li><a href="https://www.linkedin.com/in/robbe-denis-24b043294/" target="_blank"> <img src="../icons/linkedin.png"></a></li>
@@ -35,26 +34,34 @@
                 </a>
             </div>
 
-            <h2 style="justify-content: center;" class="subtitle">Description</h2>
+            <h2 style="justify-content: center;" class="subtitle">Kinetic Wave</h2>
             <div style="text-align: center;">
                 Kinetic Wave is a synthesizer/modulator that uses a kinect to track body movements and modulate audio samples.
-                This project was made in C++ using the JUCE framework and the Kinect SDK, with a small self-made interface to track certain body parts.
+                This project was made in C++ using the JUCE framework and the Kinect SDK, with a small self-made interface to track specific body parts.
             </div> 
 
-            <div class="video-card">
-                <div style="text-align: center;">
-                    <iframe width="420" height="315"
-                        src="https://www.youtube.com/embed/tgbNymZ7vqY"
-                        frameborder="1" 
-                        allowfullscreen>
-                    </iframe>
+            <div class="card-container">
+                <div class="video-card">
+                    <div style="text-align: center;">
+                        <iframe height="400vh" width="100%"
+                            src="https://www.youtube.com/embed/tgbNymZ7vqY"
+                            frameborder="1" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
                 </div>
 
-                <div style="text-align: center;">
-                    Text
+                <div class="card">
+                    <h3 class="subtitle">
+                        Description
+                    </h3>
+                    <div>
+                        This is a very simple interface to track specific joints using NuiApi to access the Kinect sensor's data.
+                        Joints can be registered using <code>AddJointForTracking(unsigned joint)</code> and retrieved using <code>GetTrackingJointPosition(unsigned joint)</code>.
+                        To update the internal data of the joints, <code>void Update()</code> has to be manually called, this way the user has full control over when the data is updated.
+                    </div>
                 </div>
             </div>
-
             <div class="card-container">
                 <div class="card">
                     <h3 class="subtitle">
@@ -65,18 +72,31 @@
                         </div>
                     </h3>
                     <div>
-                        This is a very simple interface to track specific joints using NuiApi to access the Kinect data.
-                        Joints can be registered using <code>void AddJointForTracking(unsigned joint);</code> and retrieved using <code>const Vector4& GetTrackingJointPosition(unsigned joint)</code>.
-                        To update the internal data of the joints, <code>void Update();</code> has to be manually called, this way the user has full control over when the data is updated.
+                        This is a very simple interface to track specific joints using NuiApi to access the Kinect sensor's data.
+                        Joints can be registered using <code>AddJointForTracking(unsigned joint)</code> and retrieved using <code>GetTrackingJointPosition(unsigned joint)</code>.
+                        To update the internal data of the joints, <code>void Update()</code> has to be manually called, this way the user has full control over when the data is updated.
                     </div>
                 </div>
 
                 <div class="card">
                     <h3 class="subtitle">
-                        Phaser
+                        Phase Modulation
                         <div class="link-row">
-                            <a href="https://github.com/RobbeDenis/2D-game-engine/blob/a266c24a03049a5470b0a395b75396d21d379e7c/Minigin/GameObject.h#L34" class="code-link" target="_blank">.h</a>
-                            <a href="https://github.com/RobbeDenis/2D-game-engine/blob/a266c24a03049a5470b0a395b75396d21d379e7c/Minigin/GameObject.cpp#L212" class="code-link" target="_blank">.cpp</a>
+                            <a href="https://github.com/RobbeDenis/KineticWave/blob/main/Source/Phaser.h" class="code-link" target="_blank">.h</a>
+                            <a href="https://github.com/RobbeDenis/KineticWave/blob/main/Source/Phaser.cpp" class="code-link" target="_blank">.cpp</a>
+                        </div>
+                    </h3>
+                    <div>
+                        Text
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="subtitle">
+                        Distortion
+                        <div class="link-row">
+                            <a href="https://github.com/RobbeDenis/KineticWave/blob/main/Source/THD.h" class="code-link" target="_blank">.h</a>
+                            <a href="https://github.com/RobbeDenis/KineticWave/blob/main/Source/THD.cpp" class="code-link" target="_blank">.cpp</a>
                         </div>
                     </h3>
                     <div>
