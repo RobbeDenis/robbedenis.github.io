@@ -37,7 +37,7 @@
             <h2 style="justify-content: center;" class="subtitle">Kinetic Wave</h2>
             <div style="text-align: center;">
                 Kinetic Wave is a synthesizer/modulator that uses a kinect to track body movements and modulate audio samples.
-                This project was made in C++ using the JUCE framework and the Kinect SDK, with a small self-made interface to track specific body parts.
+                This project was made in C++ using the JUCE framework and the Kinect SDK, with a small self-made interface using NuiApi to track specific body parts.
             </div> 
 
             <div class="card-container">
@@ -87,7 +87,10 @@
                         </div>
                     </h3>
                     <div>
-                        Text
+                        This phase modulation effect consists of having multiple delayed voices with each there own volume modified by phase modulation.
+                        By using <code>std::queue</code> a delay can be implemented very easily, each voice has its own queue where only the back will be read and used as sample.
+                        If you push every sample that has to be delayed, and read the back of the queue as the delayed before popping. Then this means that the delay time can be controlled 
+                        by changing the size of the queue.
                     </div>
                 </div>
 
