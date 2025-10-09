@@ -27,7 +27,7 @@
             </header>
         </div>
         <div class="page-content">
-                <div style="display: flex; justify-content: center;">
+            <div style="display: flex; justify-content: center;">
                 <a href="https://github.com/RobbeDenis/KineticWave" target="_blank" class="btn-outline">
                     <img src="../icons/github.png">
                     View on GitHub
@@ -87,23 +87,10 @@
                         </div>
                     </h3>
                     <div>
-                        This phase modulation effect consists of having multiple delayed voices with each there own volume modified by phase modulation.
-                        By using <code>std::queue</code> a delay can be implemented very easily, each voice has its own queue where only the back will be read and used as sample.
+                        This phase modulation effect consists of having multiple delayed voices with each there own modulating volume.
+                        By using <code>std::queue</code>, a delay can be implemented very easily. Each voice has its own queue where only the back will be read and used as sample.
                         If you push every sample that has to be delayed, and read the back of the queue as the delayed before popping. Then this means that the delay time can be controlled 
                         by changing the size of the queue.
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3 class="subtitle">
-                        Distortion
-                        <div class="link-row">
-                            <a href="https://github.com/RobbeDenis/KineticWave/blob/main/Source/THD.h" class="code-link" target="_blank">.h</a>
-                            <a href="https://github.com/RobbeDenis/KineticWave/blob/main/Source/THD.cpp" class="code-link" target="_blank">.cpp</a>
-                        </div>
-                    </h3>
-                    <div>
-                        Text
                     </div>
                 </div>
             </div>
