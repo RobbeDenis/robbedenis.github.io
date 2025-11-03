@@ -56,10 +56,28 @@
                         Description
                     </h3>
                     <div>
-                        This is a very simple interface to track specific joints using NuiApi to access the Kinect sensor's data.
-                        Joints can be registered using <code>AddJointForTracking(unsigned joint)</code> and retrieved using <code>GetTrackingJointPosition(unsigned joint)</code>.
-                        To update the internal data of the joints, <code>void Update()</code> has to be manually called, this way the user has full control over when the data is updated.
+                        <p>
+                            KineticWave was initially ment to be a NIME (New Interface for Musical Expression), but I quickly realized it could also be used as a tool 
+                            to create soundscapes.
+                        </p>
+                        <p>
+                            KineticWave can modulated 4 different effects on 2 different audio samples; audio, playrate/pitch, disttortion and phase modulation.
+                            It also offers the possibility to use tresholds instead of continious modulation or just disabled certain effects intearly.
+                            The video shows the different modulations and its effect based on the hand positions.
+                        </p>
+                        <p>
+                            The soundscape example shows the use of KineticWave to add texture in a more controlled 'analog' way. This soundscape was not entierly made with KineticWave,
+                            but some of the textures were created using it.
+                        </p>
                     </div>
+                </div>
+                <div class="card">
+                    <h4 class="subtitle">
+                        Soundscape
+                    </h4>
+                    <audio controls>
+                        <source src="../resources/soundscape_demo.mp3" type="audio/mpeg">
+                    </audio>
                 </div>
             </div>
             <div class="card-container">
@@ -73,8 +91,8 @@
                     </h3>
                     <div>
                         This is a very simple interface to track specific joints using NuiApi to access the Kinect sensor's data.
-                        Joints can be registered using <code>AddJointForTracking(unsigned joint)</code> and retrieved using <code>GetTrackingJointPosition(unsigned joint)</code>.
-                        To update the internal data of the joints, <code>void Update()</code> has to be manually called, this way the user has full control over when the data is updated.
+                        Joints can be registered for tracking to  follow thier position.
+                        To update the internal data of the joints, <code>void Update()</code> has to be manually called, this prevents unnecessary data copying.
                     </div>
                 </div>
 
