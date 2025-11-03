@@ -39,6 +39,79 @@
                 Metasound Audio Snapshots is a plugin for Unreal Engine 5 that makes it possible to record and playback specific parts of a Metasound graph at runtime.
                 This plugin was made to record and use audio data outside of the Metasound system and reduce the CPU usage by giving control over what and when audio generation can be replaced by its own 'cached' version.
             </div> 
+
+            <div class="card-container">
+                <div class="video-card">
+                    <div style="text-align: center;">
+                        <iframe height="400vh" width="100%"
+                            src="https://www.youtube.com/embed/tgbNymZ7vqY"
+                            frameborder="1" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="subtitle">
+                        Description
+                    </h3>
+                    <div>
+                        <p>
+                            Metasound is Unreal Engine's system for realtime audio synthesis and processing. 
+                            It provides a node based interface for creating complex audio with sample accurate control.
+                            This plugin extends this system by allowing users to use cached versions of the audio as playback or data outside of Metasound.
+                        </p>
+                        <p>
+                            The snapshot node can be triggered to start recording the audio for a specified duration or size.
+                            On completion, a signal is sent out and the snapshot is ready to be used. (look at the project again for other triggers)<br>
+                            The snapshot is also capable of resizing the buffer to specified frequencies without changing the effective buffer size, 
+                            this way the snapshots can be used to loop repetative signals with minimal artifacts. (maybe about other sizing modifiers and downsampling?)
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card-container">
+
+                <div class="card">
+                    <h3 class="subtitle">
+                        Coding standards
+                        <div class="link-row">
+                            <a href="https://github.com/RobbeDenis/KineticWave/blob/main/Source/KSkeletonTracker.h" class="code-link" target="_blank">.h</a>
+                            <a href="https://github.com/RobbeDenis/KineticWave/blob/main/Source/KSkeletonTracker.cpp" class="code-link" target="_blank">.cpp</a>
+                        </div>
+                    </h3>
+                    <div>
+                        talk abou the coding environment of metasounds and its lack of documentation.
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="subtitle">
+                        Type traits
+                        <div class="link-row">
+                            <a href="https://github.com/RobbeDenis/KineticWave/blob/main/Source/KSkeletonTracker.h" class="code-link" target="_blank">.h</a>
+                            <a href="https://github.com/RobbeDenis/KineticWave/blob/main/Source/KSkeletonTracker.cpp" class="code-link" target="_blank">.cpp</a>
+                        </div>
+                    </h3>
+                    <div>
+                        Look at the SnapshotNodeOutput.h for possible explenations.
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="subtitle">
+                        Automatic buffer snapping
+                        <div class="link-row">
+                            <a href="https://github.com/RobbeDenis/KineticWave/blob/main/Source/KSkeletonTracker.h" class="code-link" target="_blank">.h</a>
+                            <a href="https://github.com/RobbeDenis/KineticWave/blob/main/Source/KSkeletonTracker.cpp" class="code-link" target="_blank">.cpp</a>
+                        </div>
+                    </h3>
+                    <div>
+                        idk find it yourself
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
