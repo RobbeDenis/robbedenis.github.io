@@ -209,6 +209,20 @@ text-decoration: none;
 background: #ccc;
 }
 
+.inline-code-link 
+{
+font-family: monospace;
+background: #b5bac0;
+color: black;
+border-radius: 2px;
+padding: 1px 1px;
+text-decoration: none;
+}
+.inline-code-link:hover 
+{
+background: #ccc;
+}
+
 .icons
 {
     list-style-type: none;
@@ -233,7 +247,7 @@ background: #ccc;
 }
 .grid-item
 {
-    border: 2px solid black;
+    border: 2px solid #262c31;
     border-radius: 4px;
     display: grid;
     height: 250px;

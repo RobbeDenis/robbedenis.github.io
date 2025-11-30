@@ -39,7 +39,7 @@
             <div style="text-align: center;">
                 This is a self made 2D game engine, written in c++, using SDL2 for rendering and SDL_mixer for audio.
                 The engine uses a component based architecture, where functionality is implemented through components that are attached to gameobjects.
-                Some other features of the engine are: Command based input system, ImGui, State machines, Observers, Text and sprite rendering, Sprite animator and XBox 360 controller support.
+                Some other features of the engine are: Command based input system, ImGui support, State machines, Observers, Text and sprite rendering, Sprite animator and XBox 360 controller support.
                 The Github repository also contains a demo game Pacman, that showcases the features of the engine.
             </div> 
 
@@ -53,9 +53,8 @@
                         </div>
                     </h3>
                     <div>
-                        The gameobjects exist to group components together, handle their lifetime, engine loop calls and give them information about the position, 
-                        scene and other attached components/gameobjects.
-                        Gameobjects are final classes, this is so that functionality is only implemented through components.
+                        The gameobjects exist to group components together, handle their lifetime, engine loop calls and give them information about the general state of the game and other objects.
+                        To enforce that functionality can only be added through components, gameobjects are made final.
                     </div>
                 </div>
 
@@ -68,10 +67,9 @@
                         </div>
                     </h3>
                     <div>
-                        Components can be used for anything, the only requirement is that they are attached to a gameobject. 
-                        A gameobject provides 2 templated functions to manage components <code>AddComponent()</code> and <code>GetComponent()</code>.
-                        The GameObject validates the component type at compile time using the <code>IsComponent</code> concept and, in most IDEs, the constraints are visible through IntelliSense, 
-                        making it very user-friendly.
+                        Components can be used for anything, the only requirement is that they are attached to a gameobject.
+                        The only way to create a valid component is by using <a class="inline-code-link" target="_blank" href="https://github.com/RobbeDenis/2D-game-engine/blob/a266c24a03049a5470b0a395b75396d21d379e7c/Minigin/GameObject.h#L81"><code>AddComponent()</code></a> of a gameobject.
+                        The gameobject will then take care of initializing, updating and destroying the component.
                     </div>
                 </div>
 
@@ -80,14 +78,13 @@
                         Transform
                         <div class="link-row">
                             <a href="https://github.com/RobbeDenis/2D-game-engine/blob/a266c24a03049a5470b0a395b75396d21d379e7c/Minigin/GameObject.h#L34" class="code-link" target="_blank">.h</a>
-                            <a href="https://github.com/RobbeDenis/2D-game-engine/blob/a266c24a03049a5470b0a395b75396d21d379e7c/Minigin/GameObject.cpp#L212" class="code-link" target="_blank">.cpp</a>
+                            <a href="https://github.com/RobbeDenis/2D-game-engine/blob/a266c24a03049a5470b0a395b75396d21d379e7c/Minigin/GameObject.cpp#L225" class="code-link" target="_blank">.cpp</a>
                         </div>
                     </h3>
                     <div>
                         Every gameobject has a world and local position.
-                        Local position is the relative position to the parent gameobject, world position is the absolute position in the scene.
-                        These can only be accessed through public member functions. This is done to prevent unnecessary calculations, by setting a dirty flag whenever the positions change.
-                        When getting the world position, the engine can now know if the position needs to be recalculated depending on the flag.
+                        To prevent updating every object's position every frame, the positions can only be accessed through getters and setters.
+                        By using a dirty flag, the position is only recalculated when needed.
                     </div>
                 </div>
 
@@ -100,9 +97,10 @@
                         </div>
                     </h3>
                     <div>
-                        By default the engine uses SDL_mixer for audio, but offers the possibility to implement and swap other libraries. 
-                        This is done by using the service locator pattern, with this you can easily create your own SoundSystem and register it to the SoundSystemLocator.
-                        (here go a little indepth to explain what my current SDLSoundSystem does)
+                        By default the engine uses SDL_mixer for audio, but offers the possibility to implement and swap to other libraries. 
+                        This is done by using the service locator pattern, with this you can easily create your own sound system and register it to the 
+                        <a class="inline-code-link" target="_blank" href="https://github.com/RobbeDenis/2D-game-engine/blob/main/Minigin/SoundSystemLocator.h"><code>SoundSystemLocator</code></a>.
+                        Loading and playing audio gets done on a separate thread to prevent the main thread from freezing.
                     </div>
                 </div>
 
@@ -116,8 +114,8 @@
                     </h3>
                     <div>
                         The input manager uses the command pattern to bind input events to actions. 
-                        The engine supports both keyboard and multiple controllers controllers at the same time. By default only xbox controllers are supported, 
-                        but by inherriting from the Controller class and using its interface you can technically use any input device you want.
+                        The engine supports both keyboard and multiple controllers at the same time, by default only xbox controllers are supported.
+                        Keyboard input is handled through SDL events, while <a class="inline-code-link" target="_blank" href="https://github.com/RobbeDenis/2D-game-engine/blob/main/Minigin/XBox360Controller.cpp"><code>controllers</code></a> use XInput.
                     </div>
                 </div>
 
@@ -130,8 +128,11 @@
                         </div>
                     </h3>
                     <div>
-                        The renderer is a singleton that provides a simple interface for rendering textures, masked textures and lines.
-                        These functions are used in RenderComponent and its derived components TextRenderer and SpriteRenderer.
+                        The renderer is a singleton providing a simple interface that uses SDL for rendering textures, masked textures and debug lines.
+                        These are mainly used in 
+                        <a class="inline-code-link" target="_blank" href="https://github.com/RobbeDenis/2D-game-engine/blob/main/Minigin/RenderComponent.h"><code>RenderComponent</code></a> and its derived components 
+                        <a class="inline-code-link" target="_blank" href="https://github.com/RobbeDenis/2D-game-engine/blob/main/Minigin/TextRenderer.h"><code>TextRenderer</code></a> and 
+                        <a class="inline-code-link" target="_blank" href="https://github.com/RobbeDenis/2D-game-engine/blob/main/Minigin/SpriteRenderer.h"><code>SpriteRenderer</code></a>.
                     </div>
                 </div>
 
@@ -144,22 +145,9 @@
                         </div>
                     </h3>
                     <div>
-                        The engine allows the use of ImGui through a ImGui render component. 
-                        The only thing you need to do is use AddWindowFunction to pass a std::function<void()> that holds the ImGui window code. 
-                        After that the engine will take care of the ImGui input and rendering.
-                    </div>
-                </div>
-            </div>
-
-            <h2 style="justify-content: center;" class="subtitle">Pacman Demo</h2>
-            <div class="card-container">
-                <div class="video-card">
-                    <div style="text-align: center;">
-                        <iframe height="400vh" width="100%"
-                            src="https://www.youtube.com/embed/tgbNymZ7vqY"
-                            frameborder="1" 
-                            allowfullscreen>
-                        </iframe>
+                        The engine allows the use of ImGui through an ImGui render component. 
+                        The ImGui window code can be passed to the component using a <code>std::function</code>. 
+                        After that, the engine will take care of the rendering and input.
                     </div>
                 </div>
             </div>

@@ -57,33 +57,16 @@
                     </h3>
                     <div>
                         <p>
-                            KineticWave was initially ment to be a NIME (New Interface for Musical Expression), but I quickly realized it could also be used as a tool 
-                            to create soundscapes.
+                            KineticWave was initially meant to be a New Interface for Musical Expression or NIME in short, but it turned out to be more effective as a sound design tool 
+                            to create interesting and experimental soundscapes.
                         </p>
                         <p>
-                            KineticWave can modulated 4 different effects on 2 different audio samples; audio, playrate/pitch, distortion and phase modulation.
-                            It also offers the possibility to use tresholds instead of continious modulation or just disabled certain effects intearly.
-                            The video shows the different modulations and its effect based on the hand positions.
-                        </p>
-                        <p>
-                            The soundscape example shows the use of KineticWave to add texture in a more controlled 'analog' way. This soundscape was not entierly made with KineticWave,
-                            but some of the textures were created using it.
+                            Kinetic Wave can modulate 4 different effects on 2 different audio samples; audio, playrate/pitch, distortion and phase modulation.
+                            It also offers the possibility to use thresholds instead of continuous change or just disable certain effects intearly.
                         </p>
                     </div>
-                </div>
-                <!--
-                <div class="card">
-                    <h4 class="subtitle">
-                        Soundscape
-                    </h4>
-                    <audio controls>
-                        <source src="../resources/soundscape_demo.mp3" type="audio/mpeg">
-                    </audio>
-                </div>
-                -->
-            </div>
-            <div class="card-container">
-                <div class="card">
+                    
+                    <div class="card">
                     <h3 class="subtitle">
                         Skeleton Tracking
                         <div class="link-row">
@@ -93,25 +76,10 @@
                     </h3>
                     <div>
                         This is a very simple interface to track specific joints using NuiApi to access the Kinect sensor's data.
-                        Joints can be registered for tracking to  follow thier position.
-                        To update the internal data of the joints, <code>void Update()</code> has to be manually called, this prevents unnecessary data copying.
+                        Joints can be registered for tracking to follow their position.
+                        To update the internal data of the joints, update has to be manually called, this prevents unnecessary data copying.
                     </div>
                 </div>
-
-                <div class="card">
-                    <h3 class="subtitle">
-                        Phase Modulation
-                        <div class="link-row">
-                            <a href="https://github.com/RobbeDenis/KineticWave/blob/main/Source/Phaser.h" class="code-link" target="_blank">.h</a>
-                            <a href="https://github.com/RobbeDenis/KineticWave/blob/main/Source/Phaser.cpp" class="code-link" target="_blank">.cpp</a>
-                        </div>
-                    </h3>
-                    <div>
-                        This phase modulation effect consists of having multiple delayed voices with each there own modulating volume.
-                        By using <code>std::queue</code>, a delay can be implemented very easily. Each voice has its own queue where only the back will be read and used as sample.
-                        If you push every sample that has to be delayed, and read the back of the queue as the delayed before popping. Then this means that the delay time can be controlled 
-                        by changing the size of the queue.
-                    </div>
                 </div>
             </div>
         </div>
