@@ -57,8 +57,8 @@
                     </h3>
                     <div>
                         <p>
-                            Metasound is Unreal Engine's system for realtime audio synthesis and processing. 
-                            It provides a node based interface for creating realtime complex audio.
+                            Metasound is Unreal Engine's system for real-time audio synthesis and processing. 
+                            It provides a node-based interface for creating real-time complex audio.
                             This plugin extends this system by allowing users to use cached versions of the audio as playback or send generated audio data to other parts of the engine.
                         </p>
                         <p>
@@ -79,41 +79,55 @@
                 <div class="card">
                     <h3 class="subtitle">
                         Buffer snapping
-                        <div class="link-row">
-                            <a href="https://github.com/RobbeDenis/KineticWave/blob/main/Source/KSkeletonTracker.h" class="code-link" target="_blank">.h</a>
-                            <a href="https://github.com/RobbeDenis/KineticWave/blob/main/Source/KSkeletonTracker.cpp" class="code-link" target="_blank">.cpp</a>
-                        </div>
                     </h3>
                     <div>
-                        ...
+                        <p>
+                            To reduce artifacts on playback, the snapshot node offers two snap types: In Frequency and Last Zero Crossing. 
+                            Both these options will resize the output buffer in its own way, this does not affect the internal recording buffer, only the output.
+                        </p>
+                        <p>
+                            In Frequency will look at the given frequency input and resize the buffer to fit the maximum amount of periods of that frequency.
+                            This way, the output can be looped over seamlessly even without having to calculate the exact size of the buffer for every possible frequency needed.
+                        </p>
+                        <p>
+                            Last Zero Crossing will look for the last zero crossing in the recorded buffer and cut the buffer there. 
+                            The last sample will be set to 0 to ensure a clean cut.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="subtitle">
+                        Trigger precision
+                    </h3>
+                    <div>
+                        A snapshot node has an option to adjust its trigger precision or rate.
+                        There are two modes available: Sample Rate and Block Rate.
+                        <p>
+                            For very simple snapshots block rate would be enough, this means once start is triggered, 
+                            the snapshot will start recording at the beginning of that block.
+                        </p>
+                        <p>
+                            But in cases where the recording has to start on a very specific sample, sample rate can be used.
+                            This way the exact sample start is triggered, the recording will begin.
+                        </p>
                     </div>
                 </div>
 
                 <div class="card">
                     <h3 class="subtitle">
                         Metadata
-                        <div class="link-row">
-                            <a href="https://github.com/RobbeDenis/KineticWave/blob/main/Source/KSkeletonTracker.h" class="code-link" target="_blank">.h</a>
-                            <a href="https://github.com/RobbeDenis/KineticWave/blob/main/Source/KSkeletonTracker.cpp" class="code-link" target="_blank">.cpp</a>
-                        </div>
                     </h3>
                     <div>
-                        ...
+                        In cases where the output buffer is resized because of snap types or downsampling, some metadata can be enabled to keep track of the original size.
+                        This can then be used to know how fast the output should be played without morphing the pitch.
+                        <p>
+                            There are some other metadata options available, but these will most likely be removed and replaced by a more generic system.
+                        </p>
                     </div>
                 </div>
 
-                <div class="card">
-                    <h3 class="subtitle">
-                        Trigger rate
-                        <div class="link-row">
-                            <a href="https://github.com/RobbeDenis/KineticWave/blob/main/Source/KSkeletonTracker.h" class="code-link" target="_blank">.h</a>
-                            <a href="https://github.com/RobbeDenis/KineticWave/blob/main/Source/KSkeletonTracker.cpp" class="code-link" target="_blank">.cpp</a>
-                        </div>
-                    </h3>
-                    <div>
-                        ...
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>
